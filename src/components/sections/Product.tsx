@@ -45,7 +45,15 @@ export function Product() {
                 {producto.desarrollo.texto}
               </p>
               <a
-                href="#contacto?asunto=mensajeria"
+                href="#contacto"
+                onClick={() =>
+                  window.dispatchEvent(
+                    new CustomEvent("encudex:prefill", {
+                      detail:
+                        "Asunto: encuestas por mensajería (WhatsApp). Avísenme cuando esté disponible.",
+                    }),
+                  )
+                }
                 className="group mt-7 inline-flex min-h-11 items-center gap-2 font-medium text-navy transition-colors duration-150 hover:text-navy/70"
               >
                 {producto.desarrollo.enlace}

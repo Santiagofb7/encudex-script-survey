@@ -17,7 +17,7 @@ export function Evidence() {
 
         <ul className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-2">
           {evidencia.items.map((item, i) => {
-            const Icono = iconos[i];
+            const Icono = iconos[i] ?? FileDiff;
             return (
               <Reveal as="li" key={item.titulo} delay={(i % 2) * 60}>
                 <div className="flex gap-4">
