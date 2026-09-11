@@ -211,5 +211,5 @@ export const contacto = {
 
 export const footer = {
   descripcion:
-    "Encudex levanta encuestas telefónicas con un agente de IA cuyo enunciado de pregunta sale siempre de un archivo aprobado.",
+    "Encudex es el agente de inteligencia artificial que levanta encuestas telefónicas completas con el mismo rigor metodológico que un entrevistador humano, sin desviarse nunca del guion, a una fracción del costo y sin límite de volumen.",
 };

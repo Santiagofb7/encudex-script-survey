@@ -4,8 +4,8 @@ import { Reveal } from "@/components/Reveal";
 
 const cuotas = [
   { celda: "Norte · 18-29", pct: 92, estado: "bg-sage" },
-  { celda: "Norte · 30-49", pct: 64, estado: "bg-navy/60" },
-  { celda: "Centro · 18-29", pct: 38, estado: "bg-navy/30" },
+  { celda: "Norte · 30-49", pct: 64, estado: "bg-sage/70" },
+  { celda: "Centro · 18-29", pct: 38, estado: "bg-navy-foreground/35" },
   { celda: "Sur · 50+", pct: 81, estado: "bg-sage" },
 ];
 
@@ -13,10 +13,16 @@ const avance = [8, 14, 19, 23, 31, 36, 44, 51, 58, 61, 69, 74];
 
 function PanelMockup() {
   return (
-    <figure className="rounded-md border border-hairline bg-card p-5 sm:p-6">
-      <figcaption className="mb-5 flex items-center justify-between gap-3 border-b border-hairline pb-4">
-        <span className="eyebrow text-muted-foreground">Panel del estudio</span>
-        <span className="rounded-sm border border-hairline px-2 py-0.5 font-mono text-[11px] text-muted-foreground">
+    <figure className="rounded-md border border-navy/60 bg-navy p-5 text-navy-foreground shadow-[0_18px_50px_-24px_rgba(22,36,76,0.55)] sm:p-6">
+      <figcaption className="mb-5 flex items-center justify-between gap-3 border-b border-navy-foreground/15 pb-4">
+        <span className="flex items-center gap-2">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sage opacity-60" />
+            <span className="relative inline-flex size-2 rounded-full bg-sage" />
+          </span>
+          <span className="eyebrow text-navy-foreground/70">Panel del estudio</span>
+        </span>
+        <span className="rounded-sm border border-navy-foreground/20 px-2 py-0.5 font-mono text-[11px] text-navy-foreground/60">
           datos de ejemplo
         </span>
       </figcaption>
@@ -28,41 +34,41 @@ function PanelMockup() {
           { k: "Tasa de contacto", v: "31%" },
           { k: "Cierre proyectado", v: "12 abr" },
         ].map((m) => (
-          <div key={m.k} className="rounded-md border border-hairline p-3">
-            <p className="text-[11px] tracking-wide text-muted-foreground uppercase">{m.k}</p>
-            <p className="mt-1 font-mono text-[20px] text-navy">{m.v}</p>
+          <div key={m.k} className="rounded-md border border-navy-foreground/15 bg-navy-foreground/[0.04] p-3">
+            <p className="text-[11px] tracking-wide text-navy-foreground/55 uppercase">{m.k}</p>
+            <p className="mt-1 font-mono text-[20px] text-navy-foreground">{m.v}</p>
           </div>
         ))}
       </div>
 
       <div className="mt-6">
-        <p className="eyebrow text-muted-foreground">Cuotas por celda</p>
+        <p className="eyebrow text-navy-foreground/55">Cuotas por celda</p>
         <ul className="mt-3 space-y-2.5">
           {cuotas.map((c) => (
             <li key={c.celda} className="flex items-center gap-3">
-              <span className="w-32 shrink-0 font-mono text-[11px] text-muted-foreground">
+              <span className="w-32 shrink-0 font-mono text-[11px] text-navy-foreground/60">
                 {c.celda}
               </span>
-              <span className="h-2 flex-1 rounded-sm bg-secondary">
+              <span className="h-2 flex-1 rounded-sm bg-navy-foreground/10">
                 <span
                   className={`block h-full rounded-sm ${c.estado}`}
                   style={{ width: `${c.pct}%` }}
                 />
               </span>
-              <span className="w-10 text-right font-mono text-[11px] text-navy">{c.pct}%</span>
+              <span className="w-10 text-right font-mono text-[11px] text-navy-foreground">{c.pct}%</span>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="mt-6">
-        <p className="eyebrow text-muted-foreground">Avance diario</p>
+        <p className="eyebrow text-navy-foreground/55">Avance diario</p>
         <div className="mt-3 flex h-20 items-end gap-1.5" aria-hidden="true">
           {avance.map((h, i) => (
             <span
               key={i}
               style={{ height: `${(h / 74) * 100}%` }}
-              className="w-full rounded-[1px] bg-navy/70"
+              className="w-full rounded-[1px] bg-sage/80"
             />
           ))}
         </div>
