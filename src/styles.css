@@ -46,6 +46,10 @@
   --color-hairline: var(--hairline);
   --color-navy-hairline: var(--navy-hairline);
   --color-navy-muted: var(--navy-muted);
+  --color-steel: var(--steel);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-alert: var(--alert);
 }
 
 :root {
@@ -54,6 +58,10 @@
   --navy-foreground: oklch(0.975 0.001 197);
   --navy-hairline: oklch(0.42 0.06 269.5);
   --navy-muted: oklch(0.8 0.02 250);
+  --steel: oklch(0.72 0.07 246);
+  --ok: oklch(0.71 0.1 168);
+  --warn: oklch(0.8 0.12 80);
+  --alert: oklch(0.66 0.15 28);
   --sage: oklch(0.706 0.026 179);
   --bone: oklch(0.966 0.001 197);
   --hairline: oklch(0.912 0.002 250);
