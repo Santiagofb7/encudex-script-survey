@@ -1,14 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { hero } from "@/content/site";
-import { MechanismDiagram } from "./MechanismDiagram";
 import { Reveal } from "@/components/Reveal";
 
 export function Hero() {
   return (
     <section className="border-b border-hairline pt-[112px] pb-16 sm:pt-[140px] sm:pb-24">
-      <div className="container-encudex grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+      <div className="container-encudex">
         <Reveal>
-          <h1 className="tracking-tightish text-[34px] font-bold text-navy sm:text-[46px] lg:text-[54px]">
+          <h1 className="tracking-tightish max-w-[20ch] text-[34px] font-bold text-navy sm:text-[46px] lg:text-[54px]">
             {hero.titulo}
           </h1>
           <p className="measure mt-6 text-[17px] text-muted-foreground sm:text-[18px]">
@@ -29,10 +28,6 @@ export function Hero() {
               <ArrowRight className="size-4 transition-transform duration-150 group-hover:translate-x-0.5" />
             </a>
           </div>
-        </Reveal>
-
-        <Reveal delay={120}>
-          <MechanismDiagram />
         </Reveal>
       </div>
     </section>
