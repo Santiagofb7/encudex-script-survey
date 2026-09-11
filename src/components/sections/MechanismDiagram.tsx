@@ -1,75 +1,112 @@
-import { Lock } from "lucide-react";
-
-function Lane({
-  etiqueta,
-  descripcion,
-  children,
-}: {
-  etiqueta: string;
-  descripcion: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="border-t border-hairline py-4 first:border-t-0 first:pt-0">
-      <div className="flex items-baseline justify-between gap-4">
-        <span className="eyebrow text-navy">{etiqueta}</span>
-        <span className="text-[13px] text-muted-foreground">{descripcion}</span>
-      </div>
-      <div className="mt-3">{children}</div>
-    </div>
-  );
-}
+import { AudioLines, Check, FileAudio, Lock, MessagesSquare } from "lucide-react";
 
 export function MechanismDiagram() {
   return (
-    <figure className="rounded-md border border-hairline bg-card p-5 sm:p-6">
-      <figcaption className="mb-5 flex items-center justify-between gap-4 border-b border-hairline pb-4">
-        <span className="eyebrow text-muted-foreground">Arquitectura de habla</span>
-        <span className="font-mono text-[12px] text-muted-foreground">estudio · ejemplo</span>
+    <figure className="overflow-hidden rounded-md border border-hairline bg-card">
+      <figcaption className="border-b border-hairline px-5 py-5 sm:px-6">
+        <span className="eyebrow text-sage">Arquitectura de habla</span>
+        <h3 className="mt-2 text-[21px] font-semibold text-navy">Qué está fijo y qué puede conversar</h3>
+        <p className="mt-2 max-w-[56ch] text-[14px] leading-relaxed text-muted-foreground">
+          El agente combina audios aprobados con conversación en vivo, sin mezclar sus funciones.
+        </p>
       </figcaption>
 
-      <Lane etiqueta="Reactivo" descripcion="archivo fijo, no reformulable">
-        <div className="flex flex-wrap items-center gap-3 rounded-md border border-navy/25 bg-navy/[0.04] px-3 py-3">
-          <Lock className="size-4 shrink-0 text-navy" aria-hidden="true" />
-          <span className="font-mono text-[13px] text-navy">R-014.wav</span>
-          <span className="hidden h-4 w-px bg-hairline sm:block" aria-hidden="true" />
-          <span className="text-[13px] text-muted-foreground">
-            se reproduce por identificador, idéntico en cada entrevista
-          </span>
-        </div>
-        <div className="mt-2 flex h-2 gap-1" aria-hidden="true">
-          {Array.from({ length: 28 }).map((_, i) => (
-            <span key={i} className="h-full flex-1 rounded-[1px] bg-navy/70" />
-          ))}
-        </div>
-      </Lane>
+      <div className="relative px-5 py-2 sm:px-6">
+        <div className="absolute bottom-10 left-[43px] top-10 w-px bg-hairline sm:left-[47px]" aria-hidden="true" />
 
-      <Lane etiqueta="Repertorio" descripcion="pre-grabado y aprobado">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {["A-001 apertura", "T-006 transición", "O-012 objeción", "C-003 cierre"].map((t) => (
-            <span
-              key={t}
-              className="rounded-md border border-hairline px-2 py-2 font-mono text-[11px] text-muted-foreground"
-            >
-              {t}
-            </span>
-          ))}
+        <div className="relative grid gap-4 border-b border-hairline py-6 sm:grid-cols-[56px_1fr]">
+          <div className="relative z-10 flex size-11 items-center justify-center rounded-md border border-navy/20 bg-bone text-navy">
+            <FileAudio className="size-5" aria-hidden="true" />
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="eyebrow text-navy">1 · Reactivo</span>
+              <span className="rounded-sm border border-navy/20 bg-navy/[0.05] px-2 py-1 text-[11px] font-semibold text-navy">
+                SIEMPRE IGUAL
+              </span>
+            </div>
+            <h4 className="mt-2 text-[18px] font-semibold text-navy">La pregunta no cambia</h4>
+            <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+              Sale de un audio aprobado. El agente solo pide el archivo por su identificador; no
+              puede redactarlo ni reformularlo.
+            </p>
+            <div className="mt-4 flex items-center gap-3 rounded-md border border-navy/20 bg-bone px-3 py-3">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-sm bg-navy text-navy-foreground">
+                <Lock className="size-4" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="font-mono text-[12px] font-medium text-navy">R-014.wav</p>
+                <p className="mt-0.5 text-[12px] text-muted-foreground">Audio aprobado antes del campo</p>
+              </div>
+              <AudioLines className="ml-auto size-5 shrink-0 text-navy" aria-hidden="true" />
+            </div>
+          </div>
         </div>
-      </Lane>
 
-      <Lane etiqueta="Conversación" descripcion="habla generada en vivo, con límites verificados">
-        <div className="rounded-md border border-dashed border-sage bg-sage/10 px-3 py-3">
-          <p className="text-[13px] text-navy">
-            Aclaraciones, dudas y rapport. No puede leer las opciones antes de tiempo, sugerir
-            respuesta, agregar información ni reformular la pregunta.
+        <div className="relative grid gap-4 border-b border-hairline py-6 sm:grid-cols-[56px_1fr]">
+          <div className="relative z-10 flex size-11 items-center justify-center rounded-md border border-navy/20 bg-card text-navy">
+            <AudioLines className="size-5" aria-hidden="true" />
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="eyebrow text-navy">2 · Repertorio</span>
+              <span className="rounded-sm border border-navy/20 bg-navy/[0.05] px-2 py-1 text-[11px] font-semibold text-navy">
+                PREPARADO ANTES
+              </span>
+            </div>
+            <h4 className="mt-2 text-[18px] font-semibold text-navy">Las frases habituales ya están listas</h4>
+            <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+              Aperturas, transiciones, sondeos y cierres también se graban y aprueban antes de llamar.
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-2 text-[12px] text-navy sm:grid-cols-4">
+              {["Apertura", "Transición", "Sondeo", "Cierre"].map((label) => (
+                <span key={label} className="flex items-center gap-1.5 rounded-sm border border-hairline bg-bone px-2 py-2">
+                  <Check className="size-3.5 shrink-0 text-sage" aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative grid gap-4 py-6 sm:grid-cols-[56px_1fr]">
+          <div className="relative z-10 flex size-11 items-center justify-center rounded-md border border-sage bg-sage/10 text-navy">
+            <MessagesSquare className="size-5" aria-hidden="true" />
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="eyebrow text-navy">3 · Conversación</span>
+              <span className="rounded-sm border border-sage bg-sage/10 px-2 py-1 text-[11px] font-semibold text-navy">
+                EN VIVO
+              </span>
+            </div>
+            <h4 className="mt-2 text-[18px] font-semibold text-navy">Responde a lo que nadie anticipó</h4>
+            <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+              El agente puede aclarar dudas y responder objeciones con naturalidad, dentro de límites
+              revisados en cada turno.
+            </p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              <div className="rounded-md border border-sage bg-sage/10 px-3 py-3">
+                <p className="text-[12px] font-semibold text-navy">Sí puede</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Conversar, aclarar y escuchar.</p>
+              </div>
+              <div className="rounded-md border border-navy/20 bg-bone px-3 py-3">
+                <p className="text-[12px] font-semibold text-navy">No puede</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Cambiar la pregunta ni sugerir una respuesta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-hairline bg-navy px-5 py-5 sm:px-6">
+        <div className="flex gap-3">
+          <Lock className="mt-0.5 size-5 shrink-0 text-sage" aria-hidden="true" />
+          <p className="text-[14px] leading-relaxed text-navy-foreground">
+            <strong>En resumen:</strong> la conversación se adapta; la pregunta aprobada permanece intacta.
           </p>
         </div>
-        <div className="mt-2 flex items-end gap-[3px]" aria-hidden="true">
-          {[6, 12, 9, 16, 7, 13, 20, 10, 14, 8, 18, 11, 7, 15, 9, 12, 6, 17, 10, 8].map((h, i) => (
-            <span key={i} style={{ height: `${h}px` }} className="w-full rounded-[1px] bg-sage" />
-          ))}
-        </div>
-      </Lane>
+      </div>
     </figure>
   );
 }
