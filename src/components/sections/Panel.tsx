@@ -102,7 +102,7 @@ function PanelMockup() {
                   />
                 </span>
                 <span className="flex w-24 items-center justify-end gap-2 text-right">
-                  <span className="size-1.5 shrink-0 rounded-full ${estadoDot[c.estado]} ${estadoDot[c.estado]}" aria-hidden="true" />
+                  <span className={`size-1.5 shrink-0 rounded-full ${estadoDot[c.estado]}`} aria-hidden="true" />
                   <span className="font-mono text-[11px] text-navy-foreground/70">
                     {estadoEtiqueta[c.estado]}
                   </span>
