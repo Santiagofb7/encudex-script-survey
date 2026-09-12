@@ -6,7 +6,7 @@ type EstadoCuota = "ok" | "vigilancia" | "critica" | "cerrada";
 
 const cuotas: { celda: string; pct: number; estado: EstadoCuota }[] = [
   { celda: "Norte · 18-29", pct: 92, estado: "ok" },
-  { celda: "Norte · 30-49", pct: 64, estado: "vigilancia" },
+  { celda: "Norte · 30-49", pct: 64, estado: "warn" },
   { celda: "Centro · 18-29", pct: 38, estado: "critica" },
   { celda: "Sur · 50+", pct: 100, estado: "cerrada" },
 ];
@@ -27,8 +27,8 @@ const estadoDot: Record<EstadoCuota, string> = {
 
 const estadoEtiqueta: Record<EstadoCuota, string> = {
   ok: "en meta",
-  vigilancia: "en ritmo",
-  critica: "en riesgo",
+  warn: "en riesgo",
+  critica: "crítica",
   cerrada: "cerrada",
 };
 
@@ -56,7 +56,7 @@ function PanelMockup() {
             { k: "Completas", v: "742", acento: "bg-sage" },
             { k: "Meta", v: "1,000", acento: "bg-steel" },
             { k: "Tasa de contacto", v: "31%", acento: "bg-warn/90" },
-            { k: "Cierre proyectado", v: "12 abr", acento: "bg-alert/80" },
+            { k: "Cierre proyectado", v: "12 abr", acento: "bg-ok" },
           ].map((m) => (
             <div
               key={m.k}
