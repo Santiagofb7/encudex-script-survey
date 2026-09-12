@@ -2,7 +2,7 @@ import { CircleAlert, Check } from "lucide-react";
 import { panel } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
 
-type EstadoCuota = "ok" | "vigilancia" | "critica" | "cerrada";
+type EstadoCuota = "ok" | "warn" | "critica" | "cerrada";
 
 const cuotas: { celda: string; pct: number; estado: EstadoCuota }[] = [
   { celda: "Norte · 18-29", pct: 92, estado: "ok" },
@@ -13,14 +13,14 @@ const cuotas: { celda: string; pct: number; estado: EstadoCuota }[] = [
 
 const estadoBarra: Record<EstadoCuota, string> = {
   ok: "bg-ok",
-  vigilancia: "bg-steel",
+  warn: "bg-steel",
   critica: "bg-warn",
   cerrada: "bg-alert/80",
 };
 
 const estadoDot: Record<EstadoCuota, string> = {
   ok: "bg-ok",
-  vigilancia: "bg-steel",
+  warn: "bg-steel",
   critica: "bg-warn",
   cerrada: "bg-alert/80",
 };
