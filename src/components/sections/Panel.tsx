@@ -2,33 +2,33 @@ import { CircleAlert, Check } from "lucide-react";
 import { panel } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
 
-type EstadoCuota = "ok" | "vigilancia" | "critica" | "cerrada";
+type EstadoCuota = "ok" | "warn" | "critica" | "cerrada";
 
 const cuotas: { celda: string; pct: number; estado: EstadoCuota }[] = [
   { celda: "Norte · 18-29", pct: 92, estado: "ok" },
-  { celda: "Norte · 30-49", pct: 64, estado: "vigilancia" },
+  { celda: "Norte · 30-49", pct: 64, estado: "warn" },
   { celda: "Centro · 18-29", pct: 38, estado: "critica" },
   { celda: "Sur · 50+", pct: 100, estado: "cerrada" },
 ];
 
 const estadoBarra: Record<EstadoCuota, string> = {
   ok: "bg-ok",
-  vigilancia: "bg-steel",
+  warn: "bg-steel",
   critica: "bg-warn",
   cerrada: "bg-alert/80",
 };
 
 const estadoDot: Record<EstadoCuota, string> = {
   ok: "bg-ok",
-  vigilancia: "bg-steel",
+  warn: "bg-steel",
   critica: "bg-warn",
   cerrada: "bg-alert/80",
 };
 
 const estadoEtiqueta: Record<EstadoCuota, string> = {
   ok: "en meta",
-  vigilancia: "en ritmo",
-  critica: "en riesgo",
+  warn: "en riesgo",
+  critica: "crítica",
   cerrada: "cerrada",
 };
 
@@ -56,7 +56,7 @@ function PanelMockup() {
             { k: "Completas", v: "742", acento: "bg-sage" },
             { k: "Meta", v: "1,000", acento: "bg-steel" },
             { k: "Tasa de contacto", v: "31%", acento: "bg-warn/90" },
-            { k: "Cierre proyectado", v: "12 abr", acento: "bg-alert/80" },
+            { k: "Cierre proyectado", v: "12 abr", acento: "bg-ok" },
           ].map((m) => (
             <div
               key={m.k}
@@ -102,7 +102,7 @@ function PanelMockup() {
                   />
                 </span>
                 <span className="flex w-24 items-center justify-end gap-2 text-right">
-                  <span className="size-1.5 shrink-0 rounded-full ${estadoDot[c.estado]} ${estadoDot[c.estado]}" aria-hidden="true" />
+                  <span className={`size-1.5 shrink-0 rounded-full ${estadoDot[c.estado]}`} aria-hidden="true" />
                   <span className="font-mono text-[11px] text-navy-foreground/70">
                     {estadoEtiqueta[c.estado]}
                   </span>
