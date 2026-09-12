@@ -8,7 +8,7 @@ export const nav = [
 export const hero = {
   titulo: "El entrevistador que nunca se sale del guion.",
   subtitulo:
-    "Encudex levanta encuestas telefónicas completas con un agente de IA que pregunta igual en la entrevista uno que en la cinco mil, sin entrevistador humano y a una fracción del costo.",
+    "Encudex es el agente de inteligencia artificial que levanta encuestas telefónicas completas con el mismo rigor metodológico que un entrevistador humano, sin desviarse nunca del guion, a una fracción del costo y sin límite de volumen.",
   ctaPrimario: "Agendar demostración",
   ctaSecundario: "Cómo funciona",
 };

@@ -82,17 +82,18 @@ export function MechanismDiagram() {
             </div>
             <h4 className="mt-2 text-[18px] font-semibold text-navy">Responde a lo que nadie anticipó</h4>
             <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
-              El agente puede aclarar dudas y responder objeciones con naturalidad, dentro de límites
-              revisados en cada turno.
+              El respondente habla con naturalidad; no necesita teclear nada. El agente escucha,
+              registra el audio y marca la respuesta que corresponde. Si no entiende, pide amablemente
+              que se repita.
             </p>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               <div className="rounded-md border border-sage bg-sage/10 px-3 py-3">
                 <p className="text-[12px] font-semibold text-navy">Sí puede</p>
-                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Conversar, aclarar y escuchar.</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Conversar, aclarar, escuchar y codificar la respuesta.</p>
               </div>
               <div className="rounded-md border border-navy/20 bg-bone px-3 py-3">
                 <p className="text-[12px] font-semibold text-navy">No puede</p>
-                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Cambiar la pregunta ni sugerir una respuesta.</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">Cambiar la pregunta, sugerir una respuesta ni pedir dígitos.</p>
               </div>
             </div>
           </div>
