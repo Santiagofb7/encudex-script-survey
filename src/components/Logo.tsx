@@ -1,5 +1,5 @@
-import logoAsset from "@/assets/logo.jpg.asset.json";
-import isotipoAsset from "@/assets/isotipo.jpg.asset.json";
+import logoAsset from "@/assets/logo-new.png.asset.json";
+import isotipoAsset from "@/assets/isotipo-new.png.asset.json";
 
 export function Logotipo({ className = "h-7" }: { className?: string }) {
   return (
