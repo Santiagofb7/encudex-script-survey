@@ -64,35 +64,45 @@ export const comoFunciona = {
 };
 
 export const evidencia = {
-  titulo: "No pedimos que nos crea. Se audita.",
+  titulo: "Después de cada entrevista, usted puede comprobar qué pasó",
+  intro:
+    "Cada llamada deja un expediente claro: qué se preguntó, qué respondió la persona y cómo quedó registrada su respuesta.",
   items: [
     {
-      titulo: "Versión del instrumento por entrevista",
+      titulo: "La pregunta exacta que se hizo",
       texto:
-        "Cambiar una coma genera una versión nueva con su propio identificador, y el sistema produce un diff legible entre versiones.",
+        "Puede ver qué versión del cuestionario se usó y cualquier cambio frente a la versión anterior.",
+      detalle: "El guion aprobado queda identificado",
     },
     {
-      titulo: "Grabación en dos pistas",
-      texto: "Agente y respondente, separadas y sincronizadas.",
+      titulo: "La conversación completa",
+      texto: "Puede escuchar por separado al agente y a la persona, sin perder el orden de la llamada.",
+      detalle: "Dos audios, perfectamente sincronizados",
     },
     {
-      titulo: "Registro de cada decisión de codificación",
-      texto: "Turno, audio, transcripción, modelo, umbral y si un humano la corrigió.",
+      titulo: "Cómo se registró cada respuesta",
+      texto: "Cada respuesta queda ligada al audio original, al texto entendido y a la opción que marcó el agente.",
+      detalle: "También muestra si una persona la corrigió",
     },
     {
-      titulo: "Telemetría de reproducción",
+      titulo: "Si la pregunta se escuchó completa",
       texto:
-        "No solo qué archivo se mandó a reproducir, sino cuánto se transmitió de verdad, si se interrumpió, en qué segundo y si se releyó.",
+        "El registro muestra si la pregunta terminó, si fue interrumpida, en qué momento y si tuvo que repetirse.",
+      detalle: "No basta con saber que se reprodujo",
     },
     {
-      titulo: "Disposiciones AAPOR por intento",
-      texto: "Por intento, no por llamada, que es lo que exige una ficha técnica seria.",
+      titulo: "Qué ocurrió en cada intento",
+      texto: "Queda claro si contestaron, rechazaron, no eran elegibles o completaron la entrevista.",
+      detalle: "Un resultado claro para cada marcación",
     },
     {
-      titulo: "Concordancia contra codificador humano",
-      texto: "Reportada por pregunta y por estrato, no solo como promedio global.",
+      titulo: "Qué tan bien interpretó las respuestas",
+      texto: "Se compara lo que marcó el agente contra la revisión de una persona, pregunta por pregunta.",
+      detalle: "La precisión se demuestra, no se supone",
     },
   ],
+  cierre:
+    "En resumen: no recibe solamente una base de datos. Recibe lo necesario para revisar de dónde salió cada respuesta.",
 };
 
 export const panel = {
