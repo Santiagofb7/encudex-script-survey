@@ -12,13 +12,13 @@ export function Logotipo({ className = "h-7" }: { className?: string }) {
   );
 }
 
-export function Isotipo({ className = "h-10" }: { className?: string }) {
+export function Isotipo({ className = "h-10", loading = "lazy" }: { className?: string; loading?: "eager" | "lazy" }) {
   return (
     <img
       src={isotipoAsset.url}
       alt="Isotipo de Encudex"
       className={`${className} w-auto`}
-      loading="lazy"
+      loading={loading}
     />
   );
 }

@@ -25,9 +25,9 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
         scrolled ? "border-b border-hairline bg-bone/95 backdrop-blur" : "border-b border-transparent",
       )}
     >
-      <div className="container-encudex flex h-[76px] items-center justify-between gap-6">
+      <div className="container-encudex flex h-[84px] items-center justify-between gap-6 sm:h-[96px]">
         <Link to="/" className="shrink-0" aria-label="Encudex, ir al inicio">
-          <Logotipo className="h-9 sm:h-11" />
+          <Logotipo className="h-11 sm:h-14" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Secciones del sitio">
