@@ -25,9 +25,9 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
         scrolled ? "border-b border-hairline bg-bone/95 backdrop-blur" : "border-b border-transparent",
       )}
     >
-      <div className="container-encudex flex h-[84px] items-center justify-between gap-6 sm:h-[96px]">
+      <div className="container-encudex flex h-[88px] items-center justify-between gap-6 sm:h-[104px]">
         <Link to="/" className="shrink-0" aria-label="Encudex, ir al inicio">
-          <Logotipo className="h-11 sm:h-14" />
+          <Logotipo className="h-12 sm:h-14" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Secciones del sitio">
@@ -45,7 +45,7 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
         <div className="flex items-center gap-2">
           <a
             href={href("#contacto")}
-            className="hidden rounded-md bg-navy px-4 py-2.5 text-[15px] font-medium text-navy-foreground transition-colors duration-150 hover:bg-navy/90 sm:inline-flex"
+            className="hidden min-h-12 items-center rounded-md bg-navy px-5 py-2.5 text-[15px] font-medium text-navy-foreground transition-colors duration-150 hover:bg-navy/90 sm:inline-flex sm:min-h-14 sm:px-6 sm:py-3.5 sm:text-base"
           >
             Agendar demostración
           </a>
