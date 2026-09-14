@@ -5,7 +5,7 @@ import { Isotipo } from "@/components/Logo";
 
 export function Hero() {
   return (
-    <section className="border-b border-hairline pt-[120px] pb-16 sm:pt-[152px] sm:pb-24">
+    <section className="border-b border-hairline pt-[136px] pb-16 sm:pt-[168px] sm:pb-24">
       <div className="container-encudex">
         <Reveal>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
