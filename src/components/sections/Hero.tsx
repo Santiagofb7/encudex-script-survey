@@ -5,12 +5,12 @@ import { Isotipo } from "@/components/Logo";
 
 export function Hero() {
   return (
-    <section className="border-b border-hairline pt-[136px] pb-16 sm:pt-[168px] sm:pb-24">
+    <section className="border-b border-hairline pt-[152px] pb-16 sm:pt-[184px] sm:pb-24">
       <div className="container-encudex">
         <Reveal>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
             <div>
-              <h1 className="tracking-tightish max-w-[18ch] text-[34px] font-bold text-navy sm:text-[46px] lg:text-[54px]">
+              <h1 className="tracking-tightish max-w-[20ch] text-[30px] font-bold text-navy sm:text-[40px] lg:text-[46px]">
                 {hero.titulo}
               </h1>
               <p className="measure mt-6 text-[17px] text-muted-foreground sm:text-[18px]">
