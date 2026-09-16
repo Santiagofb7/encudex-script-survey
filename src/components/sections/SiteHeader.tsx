@@ -25,17 +25,17 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
         scrolled ? "border-b border-hairline bg-bone/95 backdrop-blur" : "border-b border-transparent",
       )}
     >
-      <div className="container-encudex flex h-[128px] items-center justify-between gap-6 sm:h-[152px]">
+      <div className="container-encudex-wide flex h-[128px] items-center justify-between gap-6 sm:h-[152px]">
         <Link to="/" className="shrink-0" aria-label="Encudex, ir al inicio">
           <Logotipo className="h-[104px] sm:h-[124px]" />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Secciones del sitio">
+        <nav className="hidden items-center gap-10 lg:gap-12 md:flex" aria-label="Secciones del sitio">
           {nav.map((item) => (
             <a
               key={item.href}
               href={href(item.href)}
-              className="text-[15px] text-muted-foreground transition-colors duration-150 hover:text-navy"
+              className="text-base text-muted-foreground transition-colors duration-150 hover:text-navy lg:text-lg"
             >
               {item.label}
             </a>
