@@ -30,12 +30,12 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
           <Logotipo className="h-[104px] sm:h-[124px]" />
         </Link>
 
-        <nav className="hidden items-center gap-10 lg:gap-12 md:flex" aria-label="Secciones del sitio">
+        <nav className="hidden items-center gap-12 lg:gap-16 md:flex" aria-label="Secciones del sitio">
           {nav.map((item) => (
             <a
               key={item.href}
               href={href(item.href)}
-              className="text-base text-muted-foreground transition-colors duration-150 hover:text-navy lg:text-lg"
+              className="text-[15px] text-muted-foreground transition-colors duration-150 hover:text-navy lg:text-base"
             >
               {item.label}
             </a>
