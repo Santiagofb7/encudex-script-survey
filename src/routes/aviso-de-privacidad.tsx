@@ -14,6 +14,7 @@ export const Route = createFileRoute("/aviso-de-privacidad")({
       { property: "og:title", content: "Aviso de privacidad — Encudex" },
       { property: "og:description", content: descripcion },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/aviso-de-privacidad" },
     ],
     links: [{ rel: "canonical", href: "/aviso-de-privacidad" }],
@@ -34,7 +35,7 @@ function Aviso() {
   return (
     <>
       <SiteHeader anchors={false} />
-      <main className="pt-[68px]">
+      <main className="pt-[128px] sm:pt-[152px]">
         <div className="container-encudex py-16">
           <h1 className="tracking-tightish text-[30px] font-bold text-navy sm:text-[40px]">
             Aviso de privacidad

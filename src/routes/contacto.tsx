@@ -14,6 +14,7 @@ export const Route = createFileRoute("/contacto")({
       { property: "og:title", content: "Agendar demostración — Encudex" },
       { property: "og:description", content: descripcion },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/contacto" },
     ],
     links: [{ rel: "canonical", href: "/contacto" }],
@@ -25,7 +26,7 @@ function Contacto() {
   return (
     <>
       <SiteHeader anchors={false} />
-      <main className="pt-[68px]">
+      <main className="pt-[128px] sm:pt-[152px]">
         <div className="container-encudex pt-16">
           <h1 className="tracking-tightish text-[30px] font-bold text-navy sm:text-[40px]">
             Agendar demostración

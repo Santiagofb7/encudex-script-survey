@@ -36,8 +36,8 @@ const avance = [8, 14, 19, 23, 31, 36, 44, 51, 58, 61, 69, 74];
 
 function PanelMockup() {
   return (
-    <figure className="overflow-hidden rounded-md border border-navy/60 bg-navy text-navy-foreground shadow-[0_18px_50px_-24px_rgba(22,36,76,0.55)]">
-      <figcaption className="mb-5 flex items-center justify-between gap-3 border-b border-navy-foreground/15 bg-navy-foreground/[0.04] px-5 py-3.5 sm:px-6">
+    <figure className="@container min-w-0 overflow-hidden rounded-md border border-navy/60 bg-navy text-navy-foreground">
+      <figcaption className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-navy-foreground/15 bg-navy-foreground/[0.04] px-5 py-3.5 sm:px-6">
         <span className="flex items-center gap-2">
           <span className="relative flex size-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />
@@ -45,13 +45,13 @@ function PanelMockup() {
           </span>
           <span className="eyebrow text-navy-foreground/70">Panel del estudio</span>
         </span>
-        <span className="rounded-sm border border-navy-foreground/20 px-2 py-0.5 font-mono text-[11px] text-navy-foreground/60">
+        <span className="shrink-0 whitespace-nowrap rounded-sm border border-navy-foreground/20 px-2 py-0.5 font-mono text-[11px] text-navy-foreground/60">
           datos de ejemplo
         </span>
       </figcaption>
 
       <div className="px-5 pb-5 sm:px-6">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 @min-[560px]:grid-cols-4">
           {[
             { k: "Completas", v: "742", acento: "bg-sage" },
             { k: "Meta", v: "1,000", acento: "bg-steel" },
@@ -60,11 +60,11 @@ function PanelMockup() {
           ].map((m) => (
             <div
               key={m.k}
-              className="overflow-hidden rounded-md border border-navy-foreground/15 bg-navy-foreground/[0.04]"
+              className="min-w-0 rounded-md border border-navy-foreground/15 bg-navy-foreground/[0.04]"
             >
               <span className={`block h-[3px] w-full ${m.acento}`} aria-hidden="true" />
               <div className="p-3">
-                <p className="text-[11px] tracking-wide text-navy-foreground/55 uppercase">{m.k}</p>
+                 <p className="min-h-8 text-[11px] leading-4 text-navy-foreground/55 uppercase">{m.k}</p>
                 <p className="mt-1 font-mono text-[20px] text-navy-foreground">{m.v}</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ function PanelMockup() {
         </div>
 
         <div className="mt-6">
-          <div className="flex items-baseline justify-between gap-3">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
             <p className="eyebrow text-navy-foreground/55">Cuotas por celda</p>
             <span className="flex items-center gap-3 font-mono text-[10px] text-navy-foreground/50">
               <span className="flex items-center gap-1">
@@ -91,17 +91,17 @@ function PanelMockup() {
           </div>
           <ul className="mt-3 space-y-2.5">
             {cuotas.map((c) => (
-              <li key={c.celda} className="flex items-center gap-3">
-                <span className="w-32 shrink-0 font-mono text-[11px] text-navy-foreground/60">
+              <li key={c.celda} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1.5">
+                <span className="min-w-0 font-mono text-[11px] text-navy-foreground/60">
                   {c.celda}
                 </span>
-                <span className="h-2 flex-1 overflow-hidden rounded-sm bg-navy-foreground/10">
+                <span className="col-span-2 row-start-2 h-2 min-w-0 overflow-hidden rounded-sm bg-navy-foreground/10">
                   <span
                     className={`block h-full rounded-sm ${estadoBarra[c.estado]}`}
                     style={{ width: `${c.pct}%` }}
                   />
                 </span>
-                <span className="flex w-24 items-center justify-end gap-2 text-right">
+                <span className="col-start-2 row-start-1 flex shrink-0 items-center justify-end gap-2 whitespace-nowrap text-right">
                   <span className={`size-1.5 shrink-0 rounded-full ${estadoDot[c.estado]}`} aria-hidden="true" />
                   <span className="font-mono text-[11px] text-navy-foreground/70">
                     {estadoEtiqueta[c.estado]}
@@ -137,7 +137,7 @@ function PanelMockup() {
 export function Panel() {
   return (
     <section id="panel" className="border-b border-hairline bg-card py-20 sm:py-24">
-      <div className="container-encudex grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container-encudex grid min-w-0 items-start gap-12 xl:grid-cols-2 xl:gap-16 [&>div]:min-w-0">
         <Reveal>
           <p className="eyebrow text-sage">Lo que ve el cliente</p>
           <h2 className="tracking-tightish mt-3 max-w-[20ch] text-[28px] font-semibold text-navy sm:text-[34px]">

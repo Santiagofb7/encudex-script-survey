@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Encudex — Encuestas telefónicas levantadas por un agente de IA" },
       { property: "og:description", content: descripcion },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

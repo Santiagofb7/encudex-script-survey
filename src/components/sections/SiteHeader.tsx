@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Logotipo } from "@/components/Logo";
 import { nav } from "@/content/site";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -30,39 +31,41 @@ export function SiteHeader({ anchors = true }: { anchors?: boolean }) {
           <Logotipo className="h-[104px] sm:h-[124px]" />
         </Link>
 
-        <nav className="hidden items-center gap-12 lg:gap-16 md:flex" aria-label="Secciones del sitio">
+        <nav className="hidden shrink-0 items-center gap-12 xl:flex 2xl:gap-16" aria-label="Secciones del sitio">
           {nav.map((item) => (
             <a
               key={item.href}
               href={href(item.href)}
-              className="text-[15px] text-muted-foreground transition-colors duration-150 hover:text-navy lg:text-base"
+              className="shrink-0 whitespace-nowrap text-[15px] leading-normal text-muted-foreground transition-colors duration-150 hover:text-navy"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={href("#contacto")}
-            className="hidden min-h-12 items-center rounded-md bg-navy px-5 py-2.5 text-[15px] font-medium text-navy-foreground transition-colors duration-150 hover:bg-navy/90 sm:inline-flex sm:min-h-14 sm:px-6 sm:py-3.5 sm:text-base"
+            className="hidden min-h-12 shrink-0 items-center whitespace-nowrap rounded-md bg-navy px-5 py-2.5 text-[15px] font-medium text-navy-foreground transition-colors duration-150 hover:bg-navy/90 sm:inline-flex sm:min-h-14 sm:px-6 sm:py-3.5 sm:text-base"
           >
             Agendar demostración
           </a>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
-            className="inline-flex size-11 items-center justify-center rounded-md text-navy md:hidden"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md text-navy xl:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          </Button>
         </div>
       </div>
 
       {open && (
-        <div className="border-t border-hairline bg-bone md:hidden">
+        <div className="border-t border-hairline bg-bone xl:hidden">
           <nav className="container-encudex flex flex-col py-2" aria-label="Secciones del sitio">
             {nav.map((item) => (
               <a
