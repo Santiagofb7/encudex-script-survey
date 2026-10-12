@@ -51,7 +51,7 @@ function PanelMockup() {
       </figcaption>
 
       <div className="px-5 pb-5 sm:px-6">
-        <div className="grid grid-cols-2 gap-3 @min-[560px]:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2.5 @min-[460px]:grid-cols-4 @min-[460px]:gap-3">
           {[
             { k: "Completas", v: "742", acento: "bg-sage" },
             { k: "Meta", v: "1,000", acento: "bg-steel" },
@@ -63,9 +63,13 @@ function PanelMockup() {
               className="min-w-0 rounded-md border border-navy-foreground/15 bg-navy-foreground/[0.04]"
             >
               <span className={`block h-[3px] w-full ${m.acento}`} aria-hidden="true" />
-              <div className="p-3">
-                 <p className="min-h-8 text-[11px] leading-4 text-navy-foreground/55 uppercase">{m.k}</p>
-                <p className="mt-1 font-mono text-[20px] text-navy-foreground">{m.v}</p>
+              <div className="p-2.5 @min-[560px]:p-3">
+                <p className="min-h-8 text-[10px] leading-4 text-navy-foreground/55 uppercase @min-[560px]:text-[11px]">
+                  {m.k}
+                </p>
+                <p className="mt-1 font-mono text-[18px] text-navy-foreground @min-[560px]:text-[20px]">
+                  {m.v}
+                </p>
               </div>
             </div>
           ))}
@@ -137,7 +141,7 @@ function PanelMockup() {
 export function Panel() {
   return (
     <section id="panel" className="border-b border-hairline bg-card py-20 sm:py-24">
-      <div className="container-encudex grid min-w-0 items-start gap-12 xl:grid-cols-2 xl:gap-16 [&>div]:min-w-0">
+      <div className="container-encudex-wide grid min-w-0 items-start gap-12 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-14 [&>div]:min-w-0">
         <Reveal>
           <p className="eyebrow text-sage">Lo que ve el cliente</p>
           <h2 className="tracking-tightish mt-3 max-w-[20ch] text-[28px] font-semibold text-navy sm:text-[34px]">
